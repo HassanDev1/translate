@@ -1,8 +1,9 @@
 const Discord = require('discord.js');
 const bot = new Discord.Client();
 const erayada =require('./erey_bixin.js');
+require('dotenv').config();
 
-const token = 'NzAzNjQxMTkwOTUxNjgyMDgw.XqRveQ.0yjXLsiZT7zSiL3LLLwx1ZxgIN0';
+const token = process.env.TOKEN_KEY;
 bot.on('ready', ()=>{ 
     console.log('hello the bot is online');
     
@@ -17,8 +18,6 @@ bot.on('message',msg=>{
         else if(msg.content.toLowerCase() ===(erey)){
             msg.reply("It means: " + micno);
         }
-        
-        
     })
 })
 bot.login(token)
